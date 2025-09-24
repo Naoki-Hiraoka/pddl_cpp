@@ -12,6 +12,7 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <depend>pddl_msgs</depend>
-  <depend>pddl_planner</depend>
+  <depend>actionlib</depend>
+  <exec_depend>pddl_planner</exec_depend>
 
 </package>
