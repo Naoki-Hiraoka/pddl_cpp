@@ -32,8 +32,11 @@ namespace pddl_cpp {
 
   class Object {
   public:
+    Object();
+    Object(const std::string& name_);
+    Object(const std::string& name_, const std::string& type_);
     std::string name;
-    std::string type;
+    std::string type = "object";
   };
 
   class Problem {
@@ -60,7 +63,7 @@ namespace pddl_cpp {
               const Problem& problem,
               double max_planning_time,
               std::vector<Step>& sequence,
-              std::vector<std::string>& data,
+              std::string& data,
               bool use_durative_action);
 
     std::string actionName;

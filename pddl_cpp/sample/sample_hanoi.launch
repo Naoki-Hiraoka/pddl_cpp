@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="pddl_cpp" type="sample_hanoi" name="sample_hanoi" output="screen"/>
+  <include file="$(find pddl_planner)/launch/pddl_downward.launch" />
+</launch>

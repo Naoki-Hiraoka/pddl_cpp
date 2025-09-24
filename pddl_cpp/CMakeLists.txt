@@ -25,13 +25,21 @@ include_directories(
  ${catkin_INCLUDE_DIRS}
 )
 
- add_library(${PROJECT_NAME}
+ add_library(${PROJECT_NAME} SHARED
    src/pddl_cpp.cpp
  )
 
  target_link_libraries(${PROJECT_NAME}
    ${catkin_LIBRARIES}
- )
+   )
+
+ add_executable(sample_hanoi
+   sample/sample_hanoi.cpp)
+
+ target_link_libraries(sample_hanoi
+   ${PROJECT_NAME}
+   )
+
 
 #############
 ## Install ##

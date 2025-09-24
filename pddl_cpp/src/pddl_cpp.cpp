@@ -3,11 +3,16 @@
 
 namespace pddl_cpp {
 
+  Object::Object() {}
+  Object::Object(const std::string& name_) : name(name_) {}
+  Object::Object(const std::string& name_, const std::string& type_) : name(name_), type(type_) {}
+
+
   bool Planner::plan(const Domain& domain,
                      const Problem& problem,
                      double max_planning_time,
                      std::vector<Step>& sequence,
-                     std::vector<std::string>& data,
+                     std::string& data,
                      bool use_durative_action) {
 
     if(!ros::isInitialized()){
@@ -73,15 +78,17 @@ namespace pddl_cpp {
     sequence.resize(result->sequence.size());
     for(int i=0;i<result->sequence.size();i++){
       sequence[i].action = result->sequence[i].action;
-      for(int j=0;j<result->sequence[i].args.size();i++){
+      sequence[i].args.resize(result->sequence[i].args.size());
+      for(int j=0;j<result->sequence[i].args.size();j++){
         sequence[i].args[j] = result->sequence[i].args[j];
       }
       sequence[i].start_time = result->sequence[i].start_time;
       sequence[i].action_duration = result->sequence[i].action_duration;
     }
-    data.resize(result->data.size());
+    data.clear();
+    data.reserve(result->data.size());
     for(int i=0;i<result->data.size();i++){
-      data[i] = result->data[i];
+      data += result->data[i];
     }
     use_durative_action = result->use_durative_action;
 
