@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_BUILD_TYPE Release)
 
 find_package(catkin REQUIRED COMPONENTS
+  actionlib
   pddl_msgs
   )
 
@@ -26,9 +27,6 @@ include_directories(
 
  add_library(${PROJECT_NAME}
    src/pddl_cpp.cpp
-   src/domain.cpp
-   src/problem.cpp
-   src/step.cpp
  )
 
  target_link_libraries(${PROJECT_NAME}
