@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>pddl_cpp</name>
+  <version>1.0.0</version>
+  <description>The pddl_cpp package</description>
+
+  <maintainer email="hiraoka@jsk.imi.i.u-tokyo.ac.jp">Naoki-Hiraoka</maintainer>
+
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>pddl_msgs</depend>
+  <depend>pddl_planner</depend>
+
+</package>
