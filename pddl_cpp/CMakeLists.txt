@@ -12,7 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES pddl_cpp
-#  CATKIN_DEPENDS other_catkin_pkg
+  CATKIN_DEPENDS actionlib
 #  DEPENDS system_lib
 )
 
