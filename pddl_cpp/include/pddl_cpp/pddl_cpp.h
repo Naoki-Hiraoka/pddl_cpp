@@ -19,6 +19,12 @@ namespace pddl_cpp {
     std::string action_duration;
   };
 
+  class Derived {
+  public:
+    std::string predicate;
+    std::string formula;
+  };
+
   class Domain {
   public:
     std::string name;
@@ -28,6 +34,7 @@ namespace pddl_cpp {
     std::vector<std::string> predicates;
     std::vector<Action> actions;
     std::vector<std::string> functions;
+    std::vector<Derived> deriveds;
   };
 
   class Object {

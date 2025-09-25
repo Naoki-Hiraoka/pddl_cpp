@@ -1,0 +1,4 @@
+- git:
+    local-name: pddl_cpp
+    uri: https://github.com/Naoki-Hiraoka/jsk_planning
+    version: derived-predicates

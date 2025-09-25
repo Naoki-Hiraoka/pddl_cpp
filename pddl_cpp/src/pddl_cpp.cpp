@@ -53,6 +53,11 @@ namespace pddl_cpp {
     for(int i=0;i<domain.functions.size();i++){
       goal.domain.functions[i] = domain.functions[i];
     }
+    goal.domain.deriveds.resize(domain.deriveds.size());
+    for(int i=0;i<domain.deriveds.size();i++){
+      goal.domain.deriveds[i].predicate = domain.deriveds[i].predicate;
+      goal.domain.deriveds[i].formula = domain.deriveds[i].formula;
+    }
     goal.problem.name = problem.name;
     goal.problem.domain = problem.domain;
     goal.problem.objects.resize(problem.objects.size());
