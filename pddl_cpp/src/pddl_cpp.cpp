@@ -82,10 +82,11 @@ namespace pddl_cpp {
     pddl_msgs::PDDLPlannerResultConstPtr result = ac_->getResult();
     sequence.resize(result->sequence.size());
     for(int i=0;i<result->sequence.size();i++){
-      sequence[i].action = result->sequence[i].action;
+      sequence[i].action = result->sequence[i].action.substr(1); // "(ACTION" となっているため
       sequence[i].args.resize(result->sequence[i].args.size());
       for(int j=0;j<result->sequence[i].args.size();j++){
         sequence[i].args[j] = result->sequence[i].args[j];
+        if(j+1==result->sequence[i].args.size()) sequence[i].args[j] = sequence[i].args[j].substr(0,sequence[i].args[j].size()-1); // "ARG)" となっているため
       }
       sequence[i].start_time = result->sequence[i].start_time;
       sequence[i].action_duration = result->sequence[i].action_duration;
