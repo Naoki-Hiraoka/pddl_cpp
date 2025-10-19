@@ -16,7 +16,7 @@ namespace pddl_cpp {
                      bool use_durative_action) {
 
     if(!ros::isInitialized()){
-      ros::init(ros::M_string(), "pddl_client",ros::init_options::AnonymousName);
+      ros::init(ros::M_string(), "pddl_client",ros::init_options::AnonymousName/*同一名で干渉しないように*/ | ros::init_options::NoSigintHandler/*ctrl-Cで終了するように*/);
     }
 
     if(!this->ac_){
